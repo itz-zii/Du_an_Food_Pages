@@ -1,0 +1,29 @@
+/* Mobile */
+@media (max-width: 576px) { 
+    body {
+        overflow-x: hidden;
+    }
+    .left-image , .right-image {
+        display: none;
+    }
+ }
+
+ /* Tablet */
+@media (max-width: 768px) { 
+
+ }
+
+ /* Desktop L */
+@media (max-width: 992px) { 
+
+ }
+
+ /* Desktop XL */
+@media (max-width: 1200px) { 
+
+ }
+
+ /* Desktop XXL */
+@media (max-width: 1400px) { 
+
+ }

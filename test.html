@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Floating Labels - Demo</title>
+
+<style>
+  :root{
+    --width: 420px;
+    --radius: 8px;
+    --border: #cfcfcf;
+    --accent: #0a84ff;
+    --label-color: #666;
+    --bg: #fff;
+  }
+
+  body{
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f6f7fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .form {
+    width: min(var(--width), 100%);
+    background: var(--bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(10,20,40,0.06);
+  }
+
+  h2{
+    margin: 0 0 18px 0;
+    font-size: 18px;
+    color: #222;
+  }
+
+  .form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  /* each field */
+  .form-group{
+    position: relative;
+  }
+
+  .form-group.full { grid-column: 1 / -1; } /* full width rows */
+
+  .form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 12px;
+    font-size: 15px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: transparent;
+    outline: none;
+    position: relative; /* so pseudo-element positions relative to input */
+  }
+
+  /* focus border */
+  .form-group input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(10,132,255,0.06);
+  }
+
+  /* label (default centered vertically) */
+  .form-group label{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: 0.22s ease;
+    background: var(--bg);
+    padding: 0 6px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  /* move label up on focus OR when input has content */
+  .form-group input:focus ~ label,
+  .form-group input:not(:placeholder-shown) ~ label {
+    top: -8px;
+    transform: translateY(0);
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  /* small helper text style */
+  .hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+  }
+
+  /* remove number spinners */
+  /* Chrome, Safari, Edge */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Make date/time picker's indicator cover the whole input so clicking anywhere opens picker (WebKit browsers)
+     and keep it invisible (opacity:0) so UI is unchanged */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    /* make sure it sits above text area so clicks go to indicator */
+    z-index: 2;
+  }
+
+  /* Ensure the input text is above background but below pseudo-indicator */
+  .form-group input {
+    z-index: 1;
+    background-clip: padding-box;
+  }
+
+  /* Responsive */
+  @media (max-width: 520px){
+    .form-grid { grid-template-columns: 1fr; }
+    .form { padding: 18px; }
+  }
+
+</style>
+</head>
+<body>
+
+  <form class="form" autocomplete="on" novalidate>
+    <h2>Đăng ký — ví dụ</h2>
+
+    <div class="form-grid">
+
+      <!-- Username -->
+      <div class="form-group">
+        <input type="text" id="username" name="username" placeholder=" " required autocomplete="name" />
+        <label for="username">Username</label>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <input type="tel" id="phone" name="phone" placeholder=" " inputmode="tel" autocomplete="tel" />
+        <label for="phone">Phone number</label>
+      </div>
+
+      <!-- Email (full width) -->
+      <div class="form-group full">
+        <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" />
+        <label for="email">Email</label>
+      </div>
+
+      <!-- 1-4 Person (number) -->
+      <div class="form-group">
+        <input type="number" id="persons" name="persons" placeholder=" " min="1" max="4" required />
+        <label for="persons">1–4 Person</label>
+      </div>
+
+      <!-- Time -->
+      <div class="form-group">
+        <input type="time" id="t" name="t" placeholder=" " required />
+        <label for="t">Time</label>
+      </div>
+
+      <!-- Date (full width) -->
+      <div class="form-group full">
+        <input type="date" id="d" name="d" placeholder=" " required />
+        <label for="d">Date</label>
+      </div>
+
+    </div>
+
+    <div style="margin-top:16px; display:flex; gap:8px; justify-content:flex-end;">
+      <button type="reset" style="padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer;">
+        Reset
+      </button>
+      <button type="submit" style="padding:8px 14px; border-radius:8px; border:0; background:var(--accent); color:#fff; cursor:pointer;">
+        Submit
+      </button>
+    </div>
+  </form>
+
+</body>
+</html>

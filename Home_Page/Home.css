@@ -1,0 +1,1230 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #111114;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: .25s;
+}
+
+body::selection {
+    background-color: #fb8f2c ;
+    color:black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    padding: 24px;
+    background-color: #111114;
+}
+
+.menu-bar .menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-bar .menu ul li {
+    margin: 0px 10px;
+}
+
+.menu-bar .menu ul li a {
+    color: rgba(255, 255, 255, 0.80);
+    padding: auto 2px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.menu-bar .menu ul li a:hover {
+    color: #fb8f2c;
+}
+
+/*  */
+
+.timer.table-reservation {
+    display: flex;
+    color: rgba(255, 255, 255, 0.80);
+    align-items: center;
+}
+
+.timer .open {
+    margin: 0 30px;
+    font-weight: 100;
+    color: rgba(169, 169, 169, 0.788);
+    user-select: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.timer .table-service {
+    border-bottom: 1px solid;
+    transition: .25s;
+}
+
+.timer .table-service p {
+    margin: 0 0 5px 0;
+    cursor: pointer;
+}
+
+.timer .table-service:hover {
+    color: #fb8f2c;
+}
+
+/*  */
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+}
+
+/*  */
+
+.main .left-image img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 25%;
+    left: -1000px;
+    animation: left-image 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+/* Ended Left image */
+
+.main .content {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    align-items: center;
+    animation: content-move 2s ease-in forwards;
+    opacity:0;
+    animation-delay: 0.5s;
+    transition: 0.25s;
+}
+
+.main .content .head {
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.main .content .body {
+    font-size: 50px;
+    margin: 1% 20%;
+    font-family: serif;
+    font-weight: 500;
+}
+
+.main .content .info {
+    margin: 0 30%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 5%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.main > .content > a {
+    color: #fb8f2c;
+    border-bottom: #fb8f2c 2px solid;
+    padding: 10px 0;
+    transition: .25s;
+}
+
+.main > .content > a:hover {
+    color: #693d14;
+    border-bottom: #693d14 2px solid;
+}
+
+/*  */
+
+.main .right-image img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 15%;
+    right: -1000px;
+    flex-shrink: 0;
+    animation: right-image 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+/*  */
+
+.time-line-info {
+    width: 100%;
+    background-color: #fb8f2c;
+    height: 196px;
+    margin: 15% 0 8% 0;
+    display:flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time-line-info::selection {
+    background-color: white;
+}
+
+.time-line-info .address {
+    width: 100%;
+    cursor: default;
+}
+
+.time-line-info .address h3 {
+    font-family: serif;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: "Libre Bodoni";
+    margin-bottom: 25px;
+}
+
+.time-line-info .address p {
+    width: 100%;
+    padding: 0 30%;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 200;
+    cursor:text;
+}
+
+.time-line-info .address:last-child p {
+    width: 100%;
+    padding: 0 10%;
+}
+
+/*  */
+
+.gallery {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.gallery .content .head {
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.gallery .content .body {
+    font-size: 50px;
+    margin: 1% 20%;
+    font-family: "Libre Bodoni";
+    font-weight: 100;
+    color: white;
+}
+
+.gallery .content .info {
+    margin: 0 30%;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 23px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 5%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.gallery .content {
+    width: 100%;
+}
+
+.gallery .spike {
+    display: flex;
+    align-items: center;
+}
+
+/*  */
+
+#gallery {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.2s;
+    padding: 0 8% 0 12%;
+}
+
+#gallery > ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#gallery ul .lander a img {
+    overflow: hidden; 
+    object-position: 45% 100%;
+    object-fit: cover;
+    width: 545px;    
+    height: 545px;
+}
+
+#gallery > #lander > ul {
+    flex-wrap: wrap;
+    display: flex;
+    list-style-type: none;;
+        justify-content: center;
+
+}
+
+#gallery > #lander > ul #item {
+    margin: 0px 30px 30px 0px;
+}
+
+#gallery > #lander > ul #item a img {
+    width: 255px;
+    height: 255px;    
+    display: inline-block;
+}
+
+/*  */
+
+#gallery > ul .lander a span ,
+#gallery #lander > ul #item a span
+{
+    position: relative;
+    display: none;
+}
+
+/*  */
+
+content {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    position: relative;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.menu .content {
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.menu .content .head {
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.menu .content .body {
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin: 1% 0 2% 0;
+}
+
+.menu .content .info {
+    margin: 0 30%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.80);
+    font-family: "Montserrat", sans-serif;
+}
+
+/*  */
+
+.sub-menu {
+    width: 100%;
+    height: auto;
+}
+
+.sub-menu .text > ul {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    margin: 0 10%;
+}
+
+.sub-menu .text ul li {
+    padding: 25px;
+    font-size: 30px;
+    font-family: "Libre Bodoni";
+}
+
+.sub-menu .text ul li a {
+    color: white;
+    transition: 0.25s ease;
+}
+
+.sub-menu .text ul li a:hover {
+    color: #fb8f2c;
+    border-bottom: #fb8f2c 0.5px solid;
+}
+
+.sub-menu .food .item {
+    width: 20%;
+    margin: 0 10%;
+}
+
+.sub-menu .food > .item a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    width: 600px;
+    margin: 2% 5%;
+    font-family: "Libre Bodoni";
+    font-weight: 100;
+    transition: 0.2s ease;
+    border: 2px transparent solid;
+    border-radius: 99px;
+}
+
+.sub-menu .food > .item a:hover {
+    color: #fb8f2c;
+    transform: translateY(-10px);
+    box-shadow: 0px 25px 25px black;
+}
+
+.sub-menu .food .item a p {
+    margin: 0 4%;
+    text-align: left;
+}
+
+.sub-menu .food > .item a span {
+    right: 0;
+    margin: 0 10%;
+}
+
+.sub-menu .food > .item a img {
+    margin: 2% 5%;
+    width: 100px;
+    height: 100px;
+}
+
+.sub-menu .food {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2%;
+}
+
+/*  */
+
+.restaurant {
+    background-color: #000000;
+    width: 100%;
+    height: 1092px;
+    position: relative;
+}
+
+.restaurant .content {
+    color: white;
+    text-align: center;
+}
+
+.restaurant > .content > .body h2 {
+    font-size: 64px;
+    font-family: "Libre Bodoni";
+    font-weight: 100;
+    padding: 40px 0 5px 0;
+}
+
+.restaurant > .content > .info p {
+    padding: 0 30% ;
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+/*  */
+
+.double-images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10%;
+    position: relative;
+    margin: 9% 0;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.double-images .picture {
+    object-fit: cover;
+    width: 370px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    border: white 1px solid;
+    cursor: pointer;
+}
+
+.double-images .picture #logo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -50px;
+    object-fit: cover;
+    border: white 1px solid;
+}
+
+/*  */
+
+.book-a-table {
+    width: 100%;
+    height: auto;
+}
+
+.book-a-table .title {
+    font-size: 50px;
+    font-family: "Libre Bodoni";
+    font-weight: 100;
+    margin-top: 8%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.book-a-table > .box {
+    display: flex;
+    justify-content: center;
+}
+
+.book-a-table > .box .sub-box {
+    background-color: #fb8f2c;
+    width: 800px;
+    height: auto;
+    margin: 2% 0 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-a-table > .box .sub-box form input {
+    position: relative;
+}
+
+.book-a-table .box nav img {
+    width: 470px;
+    height: 360.500px;
+    margin: 2% 5% 0 0 ;
+    position: absolute;
+    object-fit: cover;
+}
+
+.book-a-table .box nav svg {
+    margin-left: 425px;
+    margin-top: -9px;
+}
+
+/*  */
+
+.form {
+    position: relative;
+    margin: 20px 5%;
+    width: 270px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; 
+  cursor: pointer;
+}
+
+select {
+  appearance: none;   
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  background: none;  
+  padding-right: 20px; 
+}
+
+input {
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    outline: none;
+    background: none;
+    transition: 0.5s ease;
+  }
+
+.form label {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    pointer-events: none;
+    padding: 0 4px;
+    color: rgb(255, 255, 255);
+    transition: 0.5s ease;
+}
+
+.form input:focus ~ label {
+    top: -8px;
+    background-color: #fb8f2c;
+}
+
+.form input:valid ~ label {
+    top: -8px;
+    background-color: #fb8f2c;
+}
+
+select {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    outline: none;
+    background: none;
+    transition: 0.5s ease;
+    border: 1px solid rgb(255, 255, 255);
+    color:white;
+}
+
+.book-a-table .box .sub-box .btn {
+    width: 100%;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.book-a-table .box .sub-box .btn a {
+    background-color: #2d2d2d;
+    width: 100%;
+    padding: 1.5% 36.5%;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.book-a-table .box .sub-box .btn a:hover {
+    background-color: #202020;
+}
+
+.book-a-table .box .sub-box .btn a:active {
+    background-color: #202020;
+}
+
+/*  */
+
+.chefs {
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    align-items: center;
+    transition: 0.25s;
+}
+
+.chefs .head {
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.chefs .body {
+    font-size: 50px;
+    margin: 1% 20%;
+    font-family: serif;
+    font-weight: 500;
+}
+
+#chefs {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#chefs img {
+    width: 360px;
+    height: 360px;
+    margin: 0 25px;
+    background-color: #000000;
+    border: 2px solid ;
+    border-image: linear-gradient( white, black) 1;
+}
+
+.icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-items: center;
+}
+
+button {
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 2px transparent solid;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icon button img {
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;   
+    object-fit: cover;
+}
+
+.icon button:nth-child(2) {
+    rotate: 180deg;
+}
+
+/*  */
+
+.head .secondary-products {
+    display: inline-block;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.products .text-first-heading {
+    margin-bottom: 2%;
+}
+
+.products .text-first-heading h2 {
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 40px;
+    font-weight: 900;
+    word-spacing: 2px;
+    letter-spacing: -2px;
+    margin-bottom: 1%;
+}
+
+.products .text-first-heading p {
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 12px;
+}
+
+.products {
+    padding: 30px 0;
+}
+
+.products .body h2 {
+    font-family: "Libre Bodoni";
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.products .content .head {
+    display: flex;
+    justify-content: center;
+}
+
+.products .content .item {
+    display: inline-block;
+    width: 370px;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item h3 a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "Libre Bodoni";
+    transition: 0.3s ease;
+}
+
+.item h3 a:hover {
+    color: #fb8f2c;
+}
+
+.item h3 p {
+    font-size: 10px;
+    margin: 4% 0;
+    font-weight: 600;
+    color: #ccc;
+    font-style: italic;
+}
+
+.item h3 p > span {
+    margin-right: 60%;
+}
+
+.products .content {
+    margin: 0 15%;
+}
+
+.text-content {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.content .text-content {
+    font-size: 10px;
+    margin: 2% 0;
+    color: gray;
+}
+
+.products .secondary-products .button {
+    width: 40%;
+    border-radius: 5px;
+}
+
+.products .secondary-products  .button li > a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    border-bottom: 0.5px solid #fb8f2c;
+    padding: 5px 5px 5px 0;
+}
+
+/*  */
+
+.products #content {
+    width: 100%;
+    height: auto;
+}
+
+#content {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+#content .head {
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+#content .body {
+    font-size: 50px;
+    margin: 1% 20%;
+    font-family: serif;
+    font-weight: 500;
+}
+
+#content .info {
+    margin: 0 30%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 5%;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*  */
+
+.products .content .btn {
+    display: flex;
+    justify-content: center;
+}
+
+.products .content .btn > a {
+    color: #fb8f2c;
+    margin-top: 25px;
+    border-bottom: 0.5px solid #fb8f2c;
+    padding: 10px 0;
+    margin-bottom: 10%;
+}
+
+/*  */
+
+.download-app {
+    width: 100%;
+    height: auto;
+    background-color: #000000;
+    padding: 5%;
+    display: flex;
+    justify-content: space-around
+}
+
+.download-app .text {
+    color: white;
+    width: 45%;
+}
+
+.download-app .text h2 {
+    font-family: "Libre Bodoni";
+    font-size: 60px;
+    line-height: 45px;
+}
+
+.download-app .text p {
+    width: 370px;
+    font-family: "Plus Jakarta Sans";
+    color: rgba(255, 255, 255, 0.80);
+    margin-top: 5%;
+}
+
+.download-app .text svg {
+    left: 0px;
+    position: absolute;
+}
+
+.download-app .app-store {
+    margin: 5% 0;
+    width: 45%;
+}
+
+.download-app .app-store img {
+    width: 103px;
+    height: 32px;
+}
+
+.download-app .app-icon {
+    width: 20%;
+    height: auto;
+    display: flex;
+}
+
+.download-app .app-icon img {
+    border-radius: 15px;
+    transform: rotate(-15deg);
+    position: relative;
+    width: 147.791px;
+    height: 318.709px;
+    top: -50px;
+    transition: .3s ease;
+    user-select: none;
+}
+
+.download-app .app-icon img:nth-child(2) {
+    transform: rotate(15deg);
+    top: 50px;
+    left: -50px;
+}
+
+.download-app .app-icon img:hover {
+    transform: translateY(-30px);
+    rotate: -15deg;
+    z-index: 99;
+    box-shadow: 0px 15px 15px 15px black;
+}
+
+.download-app .app-icon img:hover:nth-child(2) {
+    transform: translateY(-30px);
+    rotate: 15deg;
+    box-shadow: 0px 0px 15px 15px black;
+    translate: 5px;
+}
+
+/*  */
+
+.subscribe {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0;
+}
+
+.subscribe .text {
+    padding: 5% 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subscribe .text .head {
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.subscribe .text .body {
+    font-size: 50px;
+    margin: 1% 20%;
+    font-family: serif;
+    font-weight: 500;
+    color: white;
+}
+
+.subscribe .text .info {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 5%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.subscribe .form {
+    display: flex;
+}
+
+.subscribe .form::selection {
+    background-color: black;
+    color: white;
+}
+
+.subscribe .form input {
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+    transition: 0.5s ease;
+    color: #000000;
+    opacity: 1;
+  }
+
+.subscribe .form label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    pointer-events: none;
+    padding: 0 4px;
+    color: rgb(0, 0, 0);
+    transition: 0.5s ease;
+    font-weight: 100;
+    background-color: transparent;
+}
+
+.subscribe .form input:focus ~ label {
+    opacity: 0;
+    background-color: transparent;
+}
+
+.subscribe .form input:valid ~ label {
+    opacity: 0;
+}
+
+.subscribe .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe .button button {
+    background-color: #fb8f2c;
+    padding: 10px 9%;
+    color: white;
+    border: 1px transparent solid;
+}
+
+.subscribe .button button:active {
+    background-color: #693d14;
+}
+
+.subscribe .button .form input:focus ~ label {
+    top: 8px;
+}
+
+/*  */
+
+.footer {
+    padding: 3% 0;
+    color: white;
+}
+
+.footer .contact-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25px;
+    padding: 0 50px;
+}
+
+.footer a {
+    color:  white;
+    text-decoration: none;
+}
+
+.footer .contact-content ul #logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer .contact-content ul li img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer .contact-content ul li {
+    list-style-type: none;
+    display: flex;
+    margin: 10px;
+    padding: 10px 0;
+}
+
+.footer .contact-content ul li a {
+    font-weight: 100;
+}
+
+
+.footer .contact-content ul li .email {
+    border: 2px white solid;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.footer .contact-content ul li .email input {
+    color: white;
+}
+
+/*  */
+
+.footer .contact-content .QR {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .contact-content .QR img {
+    height: 100px;
+}
+
+.footer .contact-content .app {
+    display: flex;
+}
+
+.footer .contact-content .app a {
+    margin: 0 5px;
+}
+
+.footer .contact-content .app a img {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    border: 1px white solid;
+    border-radius: 5px;
+}
+
+.footer .contact-content .icon {
+    display: flex;
+    font-size: 20px;
+}
+
+.footer .contact-content .icon li a {
+    margin:0 10px
+}
+
+.footer .contact-content #first {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
+
+.footer .contact-content #first p {
+    list-style-type: none;
+    display: flex;
+    margin: 10px;
+    padding: 10px 0;
+    width: 80%;
+    color: #ccc;
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+}
+
+#second li a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+}
+
+#third li a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+}
+
+#four li a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+#five li p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+}
+
+.footer .contact-content ul li a:hover {
+    color: #fb8f2c;
+}
+
+/* Hover */
+
+#gallery > ul:hover {
+    background-color: rgba(160, 53, 53, 0.301);
+    width: 545px;
+    height: 545px;
+}

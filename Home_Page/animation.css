@@ -1,0 +1,37 @@
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease; 
+}
+
+@keyframes left-image {
+    from {
+        left: -500px;
+        rotate: -160deg;
+    }
+    to {
+        left: -100px;
+    }
+}
+
+@keyframes right-image {
+    from {
+        right: -500px;
+        rotate: 160deg;
+    }
+    to {
+        right: -100px;
+    }
+}
+
+@keyframes content-move {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
