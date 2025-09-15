@@ -1227,9 +1227,3 @@ button {
 }
 
 /* Hover */
-
-#gallery > ul:hover {
-    background-color: rgba(160, 53, 53, 0.301);
-    width: 545px;
-    height: 545px;
-}
