@@ -318,6 +318,9 @@
     #chefs a:nth-child(3) {
     display: block;
     }
+    .main .content .body {
+    margin: 1% 22%;
+    }
 }
 /* Desktop XXL */
 @media (min-width: 1400px) { 
@@ -437,5 +440,8 @@
     }
     #chefs a:nth-child(3) {
     display: block;
+    }
+    .main .content .body {
+    margin: 1% 22%;
     }
 }
