@@ -445,3 +445,9 @@
     margin: 1% 22%;
     }
 }
+
+@media (min-width: 1500px) {
+    #gallery ul .lander a img {
+        margin: 0px 30%;
+    }
+}
