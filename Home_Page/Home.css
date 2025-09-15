@@ -335,7 +335,6 @@ ul {
     display: flex;
     flex-direction: column;
     color: white;
-    text-align: center;
     position: relative;
     align-items: center;
 }
