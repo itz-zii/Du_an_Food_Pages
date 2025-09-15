@@ -845,6 +845,10 @@ button {
     border-radius: 5px;
 }
 
+.products .secondary-products .button ul li a:hover {
+    color: #fb8f2c;
+}
+
 .products .secondary-products  .button li > a {
     color: white;
     text-decoration: none;
